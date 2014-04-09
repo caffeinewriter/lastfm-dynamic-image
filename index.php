@@ -8,7 +8,6 @@ $artist = $ls["artist"]["#text"];
 $track = $ls["name"];
 $album = $ls["album"]["#text"];
 $img = $ls["image"][2]["#text"];
-echo dirname(__FILE__);
 $im = imagecreatefrompng(dirname(__FILE__)."/bg.png");
 $white = imagecolorallocate($im, 245, 245, 245);
 $font = dirname(__FILE__).'/DroidSansMono.ttf';
