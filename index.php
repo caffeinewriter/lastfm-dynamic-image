@@ -43,6 +43,6 @@ imagecopy($im, $aim, $imgx, $imgy, 0, 0, 126, 126);
 imagettftext($im, 10, 0, $textx, $textskip, $white, $font, $tline);
 imagettftext($im, 10, 0, $textx, $textskip*2, $white, $font, $aline);
 imagettftext($im, 10, 0, $textx, $textskip*3, $white, $font, $bline);
-imagepng($im,dirname(__FILE__).'/brandonanzaldi.png');
+imagepng($im,dirname(__FILE__)."/$username.png");
 imagedestroy($im);
 ?>
