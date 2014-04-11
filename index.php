@@ -40,15 +40,15 @@ $alines = explode("\n", $artist);
 $blines = explode("\n", $album);
 
 if (count($tlines)>2) {
-	$track = $tlines[0]."\n".substr($tlines[1].' '.$tlines[2],31).'...';
+	$track = $tlines[0]."\n".substr($tlines[1].' '.$tlines[2],28).'...';
 }
 
 if (count($alines)>2) {
-	$artist = $alines[0]."\n".substr($alines[1].' '.$alines[2],30).'...';
+	$artist = $alines[0]."\n".substr($alines[1].' '.$alines[2],27).'...';
 }
 
 if (count($blines)>2) {
-	$album = $blines[0]."\n".substr($blines[1].' '.$blines[2],31).'...';
+	$album = $blines[0]."\n".substr($blines[1].' '.$blines[2],28).'...';
 }
 
 $tline = "Track: $track";
