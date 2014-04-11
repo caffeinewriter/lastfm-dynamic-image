@@ -51,9 +51,9 @@ if ($ext === ".jpg") {
 
 imagecopy($im, $aim, $imgx, $imgy, 0, 0, 126, 126);
 // TODO: Fix JPEG transcoding so it doesn't get screwed.
-imagettftext($im, 10, 0, $textx, $textskip, $white, $font, $tline);
-imagettftext($im, 10, 0, $textx, $textskip*2, $white, $font, $aline);
-imagettftext($im, 10, 0, $textx, $textskip*3, $white, $font, $bline);
+imagettftext($im, 10, 0, $textx, $textskip, $white, $font, $track);
+imagettftext($im, 10, 0, $textx, $textskip*2, $white, $font, $artist);
+imagettftext($im, 10, 0, $textx, $textskip*3, $white, $font, $album);
 imagepng($im,dirname(__FILE__)."/$username.png");
 imagedestroy($im);
 ?>
