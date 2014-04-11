@@ -19,29 +19,26 @@ $textx = 136;
 $texty = 5;
 $textskip = 32;
 
-if (strlen($track)>50) {
-	$track = rtrim(substr($track, 0, 47),"\n").'...';
+$track = "Track: $track";
+$artist = "Artist: $artist";
+$album = "Album: $album";
+
+if (strlen($track)>58) {
+        $track = substr($track, 0, 55).'...';
 }
 
-if (strlen($artist)>51) {
-	$artist = rtrim(substr($artist, 0, 48),"\n").'...';
+if (strlen($artist)>58) {
+        $artist = substr($artist, 0, 55).'...';
 }
 
-if (strlen($album)>50) {
-	$album = rtrim(substr($album, 0, 47),"\n").'...';
+if (strlen($album)>58) {
+        $album = substr($album, 0, 55).'...';
 }
 
-$track = wordwrap($track, 25);
-$artist = wordwrap($artist, 24);
-$album = wordwrap($album, 25);
 
-$tlines = explode("\n", $track);
-$alines = explode("\n", $artist);
-$blines = explode("\n", $album);
-
-$tline = "Track: $track";
-$aline = "Artist: $artist";
-$bline = "Album: $album";
+$track = wordwrap($track, 31);
+$artist = wordwrap($artist, 31);
+$album = wordwrap($album, 31);
 
 $ext = substr($img, -4);
 if ($ext === ".jpg") {
@@ -51,7 +48,6 @@ if ($ext === ".jpg") {
 } else {
         $aim = imagecreatefrompng(dirname(__FILE__).'/lfm.png');
 }
-
 
 imagecopy($im, $aim, $imgx, $imgy, 0, 0, 126, 126);
 // TODO: Fix JPEG transcoding so it doesn't get screwed.
