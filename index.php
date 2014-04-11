@@ -19,9 +19,40 @@ $textx = 136;
 $texty = 5;
 $textskip = 32;
 
+if (strlen($track)>50) {
+	$track = substr($track, 0, 50);
+}
+
+if (strlen($artist)>48) {
+	$artist = substr($artist, 0, 48);
+}
+
+if (strlen($album)>50) {
+	$album = substr($album, 0, 50);
+}
+
 $track = wordwrap($track, 25);
 $artist = wordwrap($artist, 24);
 $album = wordwrap($album, 25);
+
+$tlines = explode("\n", $track);
+$alines = explode("\n", $artist);
+$blines = explode("\n", $album);
+
+if (count($tlines)>2) {
+	$track = $tlines[0].$tlines[1];
+	$track = substr($track, 47).'...';
+}
+
+if (count($alines)>2) {
+	$artist = $alines[0].$alines[1];
+	$artist = substr($artist, 47).'...';
+}
+
+if (count($blines)>2) {
+	$album = $blines[0].$blines[1];
+	$album = substr($album, 47).'...';
+}
 
 $tline = "Track: $track";
 $aline = "Artist: $artist";
